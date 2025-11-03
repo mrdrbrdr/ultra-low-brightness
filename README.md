@@ -1,5 +1,7 @@
 # Logarithmic Brightness Control
 
+![ezgif-8d7f443dbb5b5d](https://github.com/user-attachments/assets/167adc19-e443-405f-96c0-adce993bde06)
+
 This is my small contribution to the [Omarchy](https://omarchy.org/) community. 
 
 Advanced screen brightness control for Omarchy with logarithmic scaling for ultra-low brightness levels. 
