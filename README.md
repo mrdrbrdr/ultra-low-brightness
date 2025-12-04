@@ -1,10 +1,16 @@
-# Advanced Brightness Control ([Omarchy](https://omarchy.org/) )
+# Does your screen's minimum brightness still hurt your eyes at night?
+
+This solves the "minimum brightness is still too bright" problem on Linux/Wayland systems.
 
 ![ezgif-8d7f443dbb5b5d](https://github.com/user-attachments/assets/167adc19-e443-405f-96c0-adce993bde06)
 
-This is my small contribution to the [Omarchy](https://omarchy.org/) community.
 
-Advanced screen brightness control for Omarchy with logarithmic scaling for ultra-low brightness levels.
+**The Problem**: Most brightness controls jump from 5% to 0% (black screen). 
+The 1-4% range is unusable because the steps are too large.
+
+**The Solution**: Logarithmic scaling gives you smooth 1% steps in the 0-5% range
+where you actually need them, while keeping normal 5% steps above that.
+
 
 ## Features
 
@@ -63,6 +69,11 @@ bindeld = ,XF86MonBrightnessDown, Logarithmic brightness down, exec, ~/.local/bi
 **The swayosd Problem**: `swayosd-client --brightness X` actively sets hardware brightness to X%, overriding logarithmic values.
 
 **Solution**: Use `--custom-progress` to display OSD without triggering swayosd's brightness management.
+
+## Works on other distros?
+Written for Omarchy, but should work on any Wayland system with:
+- brightnessctl
+- swayosd-client (or remove the OSD lines)
 
 **Architecture**:
 1. Array of target percentages: `[0, 1, 2, 3, 4, 5, 10, 15, ..., 100]`
